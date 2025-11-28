@@ -101,5 +101,5 @@ jobs:
           echo "GOOGLE_APPLICATION_CREDENTIALS=${HOME}/firebase-service-account.json" >> $GITHUB_ENV
 
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting:client-portal,hosting:core-dashboard --project "$FIREBASE_PROJECT_ID"
+        run: firebase deploy --only hosting:arealis-magnus-client,hosting:arealis-magnus --project "$FIREBASE_PROJECT_ID"
 
