@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - clean-main
       - develop
     paths:
       - "apps/client-portal/**"
@@ -13,6 +14,7 @@ on:
   pull_request:
     branches:
       - main
+      - clean-main
       - develop
     paths:
       - "apps/client-portal/**"
@@ -55,7 +57,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/clean-main')
     runs-on: ubuntu-latest
     env:
       FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
