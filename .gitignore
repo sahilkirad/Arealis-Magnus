@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Root Next.js app
 /.next/
 /node_modules/
@@ -17,3 +18,39 @@ yarn-debug.log*
 pnpm-debug.log*
 .DS_Store
 node_modules
+=======
+# Node.js dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+.next/
+**/.next/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Python caches / virtual envs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# SQLite databases
+*.db
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+>>>>>>> 30ec0f2 (implementation of dynamic features)

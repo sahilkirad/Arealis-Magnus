@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+dist/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.env
+.env.*
+.DS_Store
+.vercel
+coverage/
+
