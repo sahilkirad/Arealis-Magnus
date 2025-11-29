@@ -212,26 +212,6 @@ arealis-magnus-dashboard/
 
 ## Deployment Guide
 
-### Frontend → Vercel
-- Connect GitHub repo and select the desired Next.js app directory (e.g., root for dashboard, `ingest` for ingestion flow).
-- Build command: `npm install && npm run build`.
-- Output directory: `.next`.
-- Configure environment variables (notably `NEXT_PUBLIC_API_BASE_URL`) before deploying.
-- Redeploy whenever backend endpoints move (e.g., Render URL change).
-
-### Backend → Render (or similar PaaS)
-- Create a web service pointing to `Server/`.
-- Build command: `pip install -r requirements.txt` (provide a requirements file with FastAPI, SQLAlchemy, etc.).
-- Start command: `uvicorn app.main:app --host 0.0.0.0 --port ${PORT}`.
-- Set environment variables from `env.example`.
-- Attach persistent disk if using SQLite in production (`DATABASE_URL=sqlite+aiosqlite:///var/data/arealis_magnus.db`).
-- Consider switching to Postgres for multi-instance setups.
-
-### Client Portal → Firebase (optional)
-- Install Firebase CLI.
-- Auth with `firebase login`.
-- Deploy using the workflow documented in `apps/client-portal/README.md`.
-
 ### GitHub Actions → Firebase Hosting (CI/CD)
 - This repo includes `.github/workflows/client-portal.yml`, wired to build and deploy the client portal to Firebase Hosting on pushes to `main` that touch `apps/client-portal/**/*`.
 - Configure repository secrets in GitHub:
