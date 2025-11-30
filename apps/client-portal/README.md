@@ -97,3 +97,16 @@ Hard-coded placeholders (session IDs, counters, etc.) live inside `src/app/inges
 - Wire the upload + API forms to the ingest service once the backend endpoints are available.
 - Replace static progress widgets with real-time updates (WebSockets or polling).
 - Expand CI to cover component/unit tests when available.
+
+---
+
+### 8. Demo API Walkthrough
+
+The ingest screen ships with a live demo call that echoes the Authorization header so you can verify compliance headers without wiring backend services yet.
+
+1. Start the dev server (`npm run dev`) and browse to `http://localhost:3000/ingest`.
+2. Click **Test Connection** inside the **Live Bank API Setup** card. The UI will show the endpoint, response code, and a masked header preview.
+3. Open your browser DevTools → **Network** tab → select the `https://httpbin.org/anything/arealis-magnus-demo` request.
+4. Inspect the **Request Headers** pane to confirm `Authorization: Bearer COMPLIANCE_DEMO_KEY_abc123xyz` is present.
+
+The test endpoint is hosted by `https://httpbin.org/anything` and requires an active internet connection. Offline environments or restrictive firewalls will cause the connection check to surface an inline warning.

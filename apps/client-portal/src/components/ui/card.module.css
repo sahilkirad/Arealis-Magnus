@@ -15,6 +15,22 @@
   padding: 20px;
 }
 
+.cardInteractive {
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.cardInteractive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(8, 11, 26, 0.58);
+  border-color: rgba(56, 189, 248, 0.32);
+}
+
+.cardInteractive:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(8, 11, 26, 0.45);
+}
+
 .cardHeader {
   display: flex;
   justify-content: space-between;
@@ -39,6 +55,11 @@
   width: 100%;
   border: none;
   background: rgba(148, 163, 184, 0.18);
+}
+
+.card:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.42);
+  outline-offset: 3px;
 }
 
 

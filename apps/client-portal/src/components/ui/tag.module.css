@@ -2,15 +2,16 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: clamp(0.35rem, 1.2vw, 0.5rem) clamp(0.6rem, 1.6vw, 0.75rem);
   border-radius: var(--radius-pill);
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.4vw, 0.78rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   border: 1px solid transparent;
   background: rgba(148, 163, 184, 0.15);
   color: var(--color-text-primary);
+  white-space: nowrap;
 }
 
 .info {
@@ -35,6 +36,15 @@
   background: rgba(248, 113, 113, 0.18);
   color: #fca5a5;
   border-color: rgba(248, 113, 113, 0.35);
+}
+
+@media (max-width: 520px) {
+  .tag {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 

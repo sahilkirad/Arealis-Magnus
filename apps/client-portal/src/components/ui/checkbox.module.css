@@ -6,6 +6,11 @@
   font-size: 0.95rem;
   color: var(--color-text-primary);
   user-select: none;
+  transition: color 0.2s ease;
+}
+
+.checkbox:hover {
+  color: #dbeafe;
 }
 
 .box {
@@ -55,6 +60,13 @@
   display: block;
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .checkbox {
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 
 
